@@ -2,15 +2,9 @@ import {config} from 'dotenv'
 
 import {z} from 'zod'
 
-// console.log("./env/index.ts")
-
-// console.log("variaveis de ambiente: "+ JSON.stringify(process.env))
-
 if(process.env.NODE_ENV === 'test'){
-    console.log("Rodando os testes...")
     config({path: '.env.test'})
 }else{
-    console.log("Rodando ambiente DEV...")
     config()
 }
 
