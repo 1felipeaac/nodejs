@@ -6,10 +6,11 @@ if(process.env.NODE_ENV === 'test'){
     config({path: '.env.test'})
 }else{
     config()
+    console.log(`PORT: ${process.env.PORT};\nNODE_ENV: ${process.env.NODE_ENV};\nDATABASE_CLIENT: ${process.env.DATABASE_CLIENT};\nDATABASE_URL: ${process.env.DATABASE_URL} `)
 }
 
 const envSchema = z.object({
-    AMBIENTE_ENV: z.enum(['development', 'test', 'production']).default('production'),
+    NODE_ENV: z.enum(['development', 'test', 'production']).default('production'),
     DATABASE_CLIENT: z.enum(['sqlite', 'pg']),
     DATABASE_URL: z.string(),
     PORT: z.coerce.number().default(3333)
