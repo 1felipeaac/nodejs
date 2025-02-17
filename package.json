@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "npx tsx watch src/server.ts",
     "lint": "eslint src --ext .ts --fix",
-    "knex": "tsx ./node_modules/knex/bin/cli.ts",
+    "knex": "node --no-warnings ./node_modules/knex/bin/cli.js",
     "test": "npx vitest",
     "build": "tsup src --out-dir build"
   },
